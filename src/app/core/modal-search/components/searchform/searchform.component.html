@@ -1,0 +1,7 @@
+<form class="formWrapper" (submit)="handleSubmitSearch($event)">
+    <input type="text" [(ngModel)]="searchValue" name="value" class="inputSearch" placeholder="type search movie"
+        required />
+    <button type="submit" class="btnSubmit">
+        search
+    </button>
+</form>
