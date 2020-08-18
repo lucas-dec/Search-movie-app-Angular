@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FetchMoviesService } from '../services/fetch-movies.service'
 import { Movies } from '../../shared/models/movies'
 
@@ -7,24 +7,8 @@ import { Movies } from '../../shared/models/movies'
   templateUrl: './modal-search.component.html',
   styleUrls: ['./modal-search.component.scss']
 })
-export class ModalSearchComponent implements OnInit {
+export class ModalSearchComponent {
 
-  movies: Movies;
-  errorMessage: string;
-  constructor(private fetchMoviesService: FetchMoviesService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-  }
-
-  searchedValue(e) {
-    this.fetchMoviesService.getRecommendedRecipes(e).subscribe(items => {
-
-      this.movies = items;
-      console.log(this.movies);
-
-    }, error => {
-      this.errorMessage = error
-    })
-
-  }
 }

@@ -6,11 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  isModalSearchActive: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.isModalSearchActive = true
   }
 }

@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-searchform',
@@ -6,15 +7,14 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./searchform.component.scss']
 })
 export class SearchformComponent {
-
-  @Output()
-  searchedValue: EventEmitter<string> = new EventEmitter<string>();
-
   searchValue = ""
+
+  constructor(private router: Router) { }
 
   handleSubmitSearch = (e) => {
     e.preventDefault();
-    this.searchedValue.emit(this.searchValue);
+    this.router.navigate(['search', this.searchValue])
+    e.target.reset()
   }
 
 }

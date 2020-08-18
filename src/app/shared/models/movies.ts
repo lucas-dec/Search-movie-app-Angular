@@ -9,5 +9,6 @@ interface Movie {
 export interface Movies {
     Search: Movie[],
     totalResults: number,
-    Response: boolean
+    Response: boolean,
+    Error?: string
 }

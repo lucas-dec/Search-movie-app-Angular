@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalSearchModule } from './modal-search/modal-search.module'
+import { ModalMovieListModule } from './modal-movie-list/modal-movie-list.module'
 
 
 
@@ -9,9 +10,10 @@ import { ModalSearchModule } from './modal-search/modal-search.module'
   declarations: [],
   imports: [
     CommonModule,
-    ModalSearchModule
+    ModalSearchModule,
+    ModalMovieListModule
   ],
-  exports: [ModalSearchModule]
+  exports: [ModalSearchModule, ModalMovieListModule]
 
 })
 export class CoreModule { }
