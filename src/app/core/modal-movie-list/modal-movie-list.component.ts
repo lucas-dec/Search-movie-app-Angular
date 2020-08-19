@@ -18,19 +18,14 @@ export class ModalMovieListComponent implements OnInit {
   constructor(private fetchMoviesService: FetchMoviesService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.searchMovie = params['movie']
-    })
+    this.searchMovie = this.route.snapshot.params['movie']
     this.fetchMoviesService.getRecommendedRecipes(this.searchMovie).subscribe(items => {
       if (!items.Response) {
         this.errorMessage = items.Error
       }
       this.movies = items;
-      console.log(this.movies);
     }, error => {
       this.errorMessage = error
     })
   }
-
-
 }
