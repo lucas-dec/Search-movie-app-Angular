@@ -25,7 +25,7 @@ export class ModalMovieListComponent implements OnInit {
       }
       this.movies = items;
     }, error => {
-      this.errorMessage = error
+      this.errorMessage = error;
     })
   }
 }

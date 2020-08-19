@@ -2,5 +2,5 @@
     <div class="header">
         <app-header-fetch-movies [searchMovie]="searchMovie"></app-header-fetch-movies>
     </div>
-    <!-- <MoviesList movies={movies} /> -->
+    <app-movie-list *ngIf="movies" [movies]="movies.Search"></app-movie-list>
 </div>

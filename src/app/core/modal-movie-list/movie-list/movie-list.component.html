@@ -1,0 +1,9 @@
+<ul class="moviesListWrapper">
+    <li *ngFor="let movie of movies" [routerLink]="['/movie', movie.imdbID]" key="movie.imdbID" class="movieWrapper">
+        <div class="label">
+            <h3 class="title">{{movie.Title}}</h3>
+            <span class="yearInfo">({{movie.Year}})</span>
+        </div>
+        <img src="{{movie.Poster==='N/A' ? defaultPoster : movie.Poster}}" alt="Poster of the movie" />
+    </li>
+</ul>
