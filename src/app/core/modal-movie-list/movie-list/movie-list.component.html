@@ -1,5 +1,5 @@
 <ul class="moviesListWrapper">
-    <li *ngFor="let movie of movies" [routerLink]="['/movie', movie.imdbID]" key="movie.imdbID" class="movieWrapper">
+    <li *ngFor="let movie of movies" [routerLink]="['/movie', movie.imdbID]" class="movieWrapper">
         <div class="label">
             <h3 class="title">{{movie.Title}}</h3>
             <span class="yearInfo">({{movie.Year}})</span>
