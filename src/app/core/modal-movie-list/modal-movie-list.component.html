@@ -2,5 +2,8 @@
     <div class="header">
         <app-header-fetch-movies [searchMovie]="searchMovie"></app-header-fetch-movies>
     </div>
-    <app-movie-list *ngIf="movies" [movies]="movies.Search"></app-movie-list>
+    <app-movie-list *ngIf="movies" [movies]="movies.Search" (openModalDetails)="openModal($event)"></app-movie-list>
 </div>
+<app-modal-details-movie *ngIf="modalDetailsMovie.isOpen" [idMovie]="modalDetailsMovie.idMovie"
+    (closeModal)="onCloseModal()">
+</app-modal-details-movie>

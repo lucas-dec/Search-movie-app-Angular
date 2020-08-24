@@ -1,1 +1,34 @@
-<p>modal-details-movie works!</p>
+<div class="fullContainer">
+    <div class="modalWrapper">
+        <button (click)="handleCloseDetailsModal()" class="btnClose">
+            <img src="../../../assets/icons/close.svg" alt="Button close details modal" />
+        </button>
+
+        <div *ngIf="isLoading" class="wrapper">
+            <h1>loading...</h1>
+        </div>
+
+        <div *ngIf="errorMessage" class="errorNotification">
+            {{errorMessage}}
+        </div>
+
+        <div *ngIf="!isLoading && !errorMessage && movie" class="detailsContent">
+            <app-small-button-action-watchlist></app-small-button-action-watchlist>
+
+            <app-header-details-movie [title]="movie.Title" [year]="movie.Year" [imdbRating]="movie.imdbRating"
+                [imdbVotes]="imdbVotes"></app-header-details-movie>
+            <div>
+                <span>{{movie.Runtime}}</span> | <span>{{movie.Genre}}</span>
+            </div>
+            <img src="{{movie.Poster == 'N/A' ? defaultPoster : movie.Poster}}" alt={{movie.Title}} class="poster" />
+            <p class="about">{{movie.Plot}}</p>
+
+            <app-actors-list [actors]="movie.Actors"></app-actors-list>
+
+            <h3>Awards:</h3>
+            <p class="awards">{{movie.Awards}}</p>
+
+            <app-big-button-action-watchlist></app-big-button-action-watchlist>
+        </div>
+    </div>
+</div>

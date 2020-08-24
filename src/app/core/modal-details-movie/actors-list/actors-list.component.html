@@ -1,0 +1,9 @@
+<div *ngIf="actorsArr.length > 0; else noActors">
+    <h3>Stars:</h3>
+    <ul class="actors">
+        <li *ngFor="let actor of actorsArr">{{actor}}</li>
+    </ul>
+</div>
+<ng-template #noActors>
+    <h4>Sorry, we don't have information about actors ...</h4>
+</ng-template>
