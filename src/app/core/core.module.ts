@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalSearchModule } from './modal-search/modal-search.module'
 import { ModalMovieListModule } from './modal-movie-list/modal-movie-list.module'
+import { WatchlistModule } from './watchlist/watchlist.module'
 
 
 @NgModule({
@@ -9,9 +10,10 @@ import { ModalMovieListModule } from './modal-movie-list/modal-movie-list.module
   imports: [
     CommonModule,
     ModalSearchModule,
-    ModalMovieListModule
+    ModalMovieListModule,
+    WatchlistModule
   ],
-  exports: [ModalSearchModule, ModalMovieListModule]
+  exports: [ModalSearchModule, ModalMovieListModule, WatchlistModule]
 
 })
 export class CoreModule { }
