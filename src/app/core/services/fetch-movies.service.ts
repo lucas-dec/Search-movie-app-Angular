@@ -19,7 +19,7 @@ export class FetchMoviesService {
     return throwError(err.error.message || "Server Error")
   }
 
-  getRecommendedRecipes(searchValue): Observable<Movies> {
+  getMovies(searchValue): Observable<Movies> {
     const apiUrl: string = `http://www.omdbapi.com/?s=${searchValue}&apikey=${this.apiKey}`;
     return this.http.get<Movies>(apiUrl).pipe(catchError(this.handleError))
   }

@@ -1,0 +1,17 @@
+<div class="watchlist">
+    <ul class="listMovieWrapper">
+        <li class="favMovie" *ngFor="let movie of moviesOnWatchlist">
+            <img src='{{movie.poster==="N/A" ? defaultPoster : movie.poster}}'
+                alt="Poster of the movie - {{movie.title}}" class="poster" />
+            <h3 class="title">{{movie.title}}</h3>
+            <div class="optionsWrapper">
+                <button (click)="openDetailsModal(movie.movieID)" class="btnOpen">
+                    <img src="../../../../assets/icons/open.svg" alt="Open icon" class="optionBtn" />
+                </button>
+                <button (click)="action('remove', movie.movieID)" class="btnRemove">
+                    <img src="../../../../assets/icons/removeFromWatchlist.svg" alt="Remove icon" class="optionBtn" />
+                </button>
+            </div>
+        </li>
+    </ul>
+</div>

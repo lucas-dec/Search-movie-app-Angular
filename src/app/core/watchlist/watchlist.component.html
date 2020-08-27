@@ -3,4 +3,8 @@
         <img src="../../../assets/icons/watchlist.svg" alt=" Icon watchlist" />
     </button>
     <h1>Watchlist</h1>
+    <app-fav-movie *ngIf="moviesOnWatchlist; else emptyList" [moviesOnWatchlist]="moviesOnWatchlist"></app-fav-movie>
+    <ng-template #emptyList>
+        <h5 class="emptyList">Watchlist is empty</h5>
+    </ng-template>
 </div>

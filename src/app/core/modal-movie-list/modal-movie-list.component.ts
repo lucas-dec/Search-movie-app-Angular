@@ -26,7 +26,7 @@ export class ModalMovieListComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchMovie = this.route.snapshot.params['movie']
-    this.fetchMoviesService.getRecommendedRecipes(this.searchMovie).subscribe(items => {
+    this.fetchMoviesService.getMovies(this.searchMovie).subscribe(items => {
       if (!items.Response) {
         this.errorMessage = items.Error
         return
