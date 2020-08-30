@@ -1,0 +1,97 @@
+@import "./variables.scss";
+
+.fullContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  z-index: 998;
+}
+
+.modalWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 1.5em 2em;
+  overflow: scroll;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 5px;
+  animation: slideModalUp 0.5s ease-out forwards;
+
+  @keyframes slideModalUp {
+    0% {
+      transform: translate(-50%, -47%);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @include landscapeAndTablet {
+    width: 70%;
+    height: 95%;
+  }
+
+  @include smallDesktop {
+    width: 60vw;
+    height: 90%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+  @include bigDesktop {
+    width: 40vw;
+    height: 85%;
+    overflow: auto;
+    padding: 3em 4em;
+  }
+
+  span {
+    font-size: 0.6rem;
+  }
+
+  button.btnClose {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  img.poster {
+    width: 100%;
+    margin: 0.5em 0;
+
+    @include landscapeAndTablet {
+      width: 50%;
+    }
+
+    @include smallDesktop {
+      width: 40%;
+    }
+
+    @include bigDesktop {
+      width: 30%;
+    }
+  }
+  p.about {
+    text-align: justify;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  p.awards {
+    font-size: 0.8rem;
+    padding-left: 1em;
+  }
+}

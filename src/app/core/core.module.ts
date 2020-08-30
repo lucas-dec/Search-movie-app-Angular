@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ModalSearchModule } from './modal-search/modal-search.module'
 import { ModalMovieListModule } from './modal-movie-list/modal-movie-list.module'
 import { WatchlistModule } from './watchlist/watchlist.module'
+import { ModalDetailsMovieModule } from './modal-details-movie/modal-details-movie.module'
 
 
 @NgModule({
@@ -11,9 +12,10 @@ import { WatchlistModule } from './watchlist/watchlist.module'
     CommonModule,
     ModalSearchModule,
     ModalMovieListModule,
-    WatchlistModule
+    WatchlistModule,
+    ModalDetailsMovieModule
   ],
-  exports: [ModalSearchModule, ModalMovieListModule, WatchlistModule]
+  exports: [ModalSearchModule, ModalMovieListModule, WatchlistModule, ModalDetailsMovieModule]
 
 })
 export class CoreModule { }

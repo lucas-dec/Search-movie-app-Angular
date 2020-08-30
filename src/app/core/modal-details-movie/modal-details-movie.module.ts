@@ -5,11 +5,12 @@ import { SmallButtonActionWatchlistComponent } from './small-button-action-watch
 import { HeaderDetailsMovieComponent } from './header-details-movie/header-details-movie.component';
 import { ActorsListComponent } from './actors-list/actors-list.component';
 import { BigButtonActionWatchlistComponent } from './big-button-action-watchlist/big-button-action-watchlist.component';
+import { NotificationComponent } from './notification/notification.component';
 
 
 
 @NgModule({
-  declarations: [ModalDetailsMovieComponent, SmallButtonActionWatchlistComponent, HeaderDetailsMovieComponent, ActorsListComponent, BigButtonActionWatchlistComponent],
+  declarations: [ModalDetailsMovieComponent, SmallButtonActionWatchlistComponent, HeaderDetailsMovieComponent, ActorsListComponent, BigButtonActionWatchlistComponent, NotificationComponent],
   imports: [
     CommonModule
   ],

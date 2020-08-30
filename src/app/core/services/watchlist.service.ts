@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { favMovies, updateStorage } from '../storage/localStorage'
 import { FavMovie } from '../../shared/models/watchList'
 import { BehaviorSubject, Observable } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { take } from 'rxjs/operators';
 import { FavMovieComponent } from '../watchlist/fav-movie/fav-movie.component';
-
-
+import { ActionMessages } from '../../shared/models/action-messages.enum'
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +13,7 @@ export class WatchlistService {
 
 
   private moviesWatchlist = new BehaviorSubject<FavMovie[]>([]);
-
+  private actionMessage = new BehaviorSubject<string>(null);
 
   constructor() {
 
@@ -30,29 +29,32 @@ export class WatchlistService {
     }]
     updateStorage(fakeData)
     this.moviesWatchlist.next(favMovies)
-    console.log('poczatkowa wartosc watchlist: ', this.moviesWatchlist.value);
-
-
   }
 
-  getFavMovies(): Observable<FavMovie[]> {
+  getFavMovies(): BehaviorSubject<FavMovie[]> {
+    console.log("pobrano elementy watchlist: ", this.moviesWatchlist.value);
     return this.moviesWatchlist
   }
 
+  showActionMessage(): BehaviorSubject<string> {
+    return this.actionMessage
+  }
+
   addFavMovie(movie): void {
-    this.moviesWatchlist.next(movie)
-    updateStorage(movie)
-    console.log('dodano film do localStorage', movie)
+    this.moviesWatchlist.pipe(take(1)).subscribe(favMovies => {
+      favMovies.push(movie);
+      this.moviesWatchlist.next(favMovies)
+      updateStorage(favMovies)
+    })
+    this.actionMessage.next(ActionMessages.ADD_MESSAGE)
   }
 
   removeMovie(id): void {
-    console.log('usuwanie filmu o id:', id);
-    console.log('watchlist przed usuwaniem:', this.moviesWatchlist);
-
-    const newStorage = this.moviesWatchlist.value.filter(movie => movie.movieID !== id);
-    this.moviesWatchlist.next(newStorage)
-
-    console.log('nowy watchlis:', this.moviesWatchlist);
-    updateStorage(newStorage)
+    this.moviesWatchlist.pipe(take(1)).subscribe(favMovies => {
+      favMovies = favMovies.filter(movie => movie.movieID != id);
+      this.moviesWatchlist.next(favMovies)
+      updateStorage(favMovies)
+      this.actionMessage.next(ActionMessages.REMOVE_MESSAGE)
+    })
   }
 }

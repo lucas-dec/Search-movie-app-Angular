@@ -1,1 +1,4 @@
-<button class="smallBtnActionWatchlist">small button</button>
+<button (click)="action()" class="smallBtnActionWatchlist">
+    <img src="{{actionType === 'add' ? iconAddToWatchlist : iconRemoveFromWatchlist}}"
+        alt="{{actionType === 'add' ? 'Button add movie to watchlist' : 'Button remove movie from watchlist'}}">
+</button>

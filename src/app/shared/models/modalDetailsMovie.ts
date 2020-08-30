@@ -1,4 +1,4 @@
-export interface ModalDetailsMovie {
+export interface ModalDetailsStatus {
     isOpen: boolean;
     idMovie: string
 }

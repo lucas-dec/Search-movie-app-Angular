@@ -10,17 +10,17 @@ import { Subscribable, Subscription } from 'rxjs';
 })
 export class WatchlistComponent implements OnInit, OnDestroy {
 
-  openWatchlist: boolean = true;
+  openWatchlist: boolean;
   moviesOnWatchlist: Array<FavMovie>;
   private subscription: Subscription;
 
   constructor(private watchlistService: WatchlistService) { }
 
   ngOnInit(): void {
+    console.log('start watchlist');
+
     this.subscription = this.watchlistService.getFavMovies().subscribe(movies => {
       this.moviesOnWatchlist = movies
-      console.log(this.moviesOnWatchlist);
-
     })
   }
   ngOnDestroy(): void {
@@ -29,5 +29,9 @@ export class WatchlistComponent implements OnInit, OnDestroy {
 
   toogleWatchlist() {
     this.openWatchlist = !this.openWatchlist
+  }
+
+  removeMovie(id) {
+    this.watchlistService.removeMovie(id)
   }
 }

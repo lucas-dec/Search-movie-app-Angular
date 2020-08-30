@@ -1,2 +1,5 @@
 <router-outlet></router-outlet>
 <app-watchlist></app-watchlist>
+
+<app-modal-details-movie *ngIf="modalDetailsMovie.isOpen" [idMovie]="modalDetailsMovie.idMovie">
+</app-modal-details-movie>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalDetailsMovieService } from './core/services/modal-details-movie.service'
+import { ModalDetailsStatus } from './shared/models/modalDetailsMovie';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  constructor() { }
+  modalDetailsMovie: ModalDetailsStatus = null
+  constructor(private modalDetailsMovieService: ModalDetailsMovieService) { }
 
   ngOnInit(): void {
+    this.modalDetailsMovieService.getModalStatus().subscribe((status: ModalDetailsStatus) => {
+      this.modalDetailsMovie = status
+    })
   }
 }

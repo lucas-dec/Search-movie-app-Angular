@@ -13,8 +13,10 @@
         </div>
 
         <div *ngIf="!isLoading && !errorMessage && movie" class="detailsContent">
-            <app-small-button-action-watchlist></app-small-button-action-watchlist>
-
+            <app-small-button-action-watchlist [actionType]="actionType" (handleAction)="handleAction($event)">
+            </app-small-button-action-watchlist>
+            <app-notification *ngIf="actionMessage" [actionMessage]="actionMessage" [actionType]="actionType">
+            </app-notification>
             <app-header-details-movie [title]="movie.Title" [year]="movie.Year" [imdbRating]="movie.imdbRating"
                 [imdbVotes]="imdbVotes"></app-header-details-movie>
             <div>
@@ -28,7 +30,7 @@
             <h3>Awards:</h3>
             <p class="awards">{{movie.Awards}}</p>
 
-            <app-big-button-action-watchlist></app-big-button-action-watchlist>
+            <app-big-button-action-watchlist [actionType]="actionType"></app-big-button-action-watchlist>
         </div>
     </div>
 </div>

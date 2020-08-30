@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchMoviesService } from '../services/fetch-movies.service';
+import { ModalDetailsMovieService } from '../services/modal-details-movie.service'
 import { ActivatedRoute } from '@angular/router';
 import { Movies } from '../../shared/models/movies'
-import { ModalDetailsMovie } from '../../shared/models/modalDetailsMovie'
 
 @Component({
   selector: 'app-modal-movie-list',
@@ -16,13 +16,7 @@ export class ModalMovieListComponent implements OnInit {
   movies: Movies;
   errorMessage: string;
 
-  openModalFlag: boolean = false;
-  modalDetailsMovie: ModalDetailsMovie = {
-    isOpen: false,
-    idMovie: null
-  }
-
-  constructor(private fetchMoviesService: FetchMoviesService, private route: ActivatedRoute) { }
+  constructor(private fetchMoviesService: FetchMoviesService, private route: ActivatedRoute, private modalDetailsMovieService: ModalDetailsMovieService) { }
 
   ngOnInit(): void {
     this.searchMovie = this.route.snapshot.params['movie']
@@ -37,18 +31,8 @@ export class ModalMovieListComponent implements OnInit {
     })
   }
 
-  openModal(idMovie: string) {
-    this.modalDetailsMovie = {
-      isOpen: true,
-      idMovie: idMovie
-    }
-    this.openModalFlag = true
+  openModalDetails(id) {
+    this.modalDetailsMovieService.openModal(id)
+  }
 
-  }
-  onCloseModal() {
-    this.modalDetailsMovie = {
-      isOpen: false,
-      idMovie: null
-    }
-  }
 }
