@@ -30,7 +30,8 @@
             <h3>Awards:</h3>
             <p class="awards">{{movie.Awards}}</p>
 
-            <app-big-button-action-watchlist [actionType]="actionType"></app-big-button-action-watchlist>
+            <app-big-button-action-watchlist [actionType]="actionType" (handleAction)="handleAction()">
+            </app-big-button-action-watchlist>
         </div>
     </div>
 </div>

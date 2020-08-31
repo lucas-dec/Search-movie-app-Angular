@@ -1,3 +1,8 @@
-<button class="bigBtnWatchlist">
-    big button
+<button *ngIf="actionType === 'add'" (click)="action()" class="bigBtnWatchlist addToWatchlist">
+    <img src="{{iconAddToWatchlist}}" alt="Button add movie to watchlist">
+    Add this movie to My Watchlist !
+</button>
+<button *ngIf="actionType === 'remove'" (click)="action()" class="bigBtnWatchlist removeFromWatchlist">
+    <img src="{{iconRemoveFromWatchlist}}" alt="Button remove movie from watchlist">
+    Remove this movie from My Watchlist !
 </button>
