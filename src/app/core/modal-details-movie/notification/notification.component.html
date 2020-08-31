@@ -1,1 +1,2 @@
-<p>notification works!</p>
+<h5 *ngIf="actionType === 'add'" class="notification add">{{actionMessage}}</h5>
+<h5 *ngIf="actionType === 'remove'" class="notification remove">{{actionMessage}}</h5>
