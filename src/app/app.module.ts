@@ -6,17 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module'
 import { WatchlistService } from './core/services/watchlist.service'
-import { ModalDetailsMovieService } from './core/services/modal-details-movie.service'
+import { ModalDetailsMovieService } from './core/services/modal-details-movie.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [WatchlistService, ModalDetailsMovieService],
   bootstrap: [AppComponent]

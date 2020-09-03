@@ -3,10 +3,7 @@
         <button (click)="handleCloseDetailsModal()" class="btnClose">
             <img src="../../../assets/icons/close.svg" alt="Button close details modal" />
         </button>
-
-        <div *ngIf="isLoading" class="wrapper">
-            <h1>loading...</h1>
-        </div>
+        <app-loading *ngIf="isLoading"></app-loading>
 
         <div *ngIf="errorMessage" class="errorNotification">
             {{errorMessage}}

@@ -5,7 +5,6 @@ import { ModalMovieListModule } from './modal-movie-list/modal-movie-list.module
 import { WatchlistModule } from './watchlist/watchlist.module'
 import { ModalDetailsMovieModule } from './modal-details-movie/modal-details-movie.module'
 
-
 @NgModule({
   declarations: [],
   imports: [

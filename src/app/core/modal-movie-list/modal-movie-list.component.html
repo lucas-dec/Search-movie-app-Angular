@@ -2,6 +2,7 @@
     <div class="header">
         <app-header-fetch-movies [searchMovie]="searchMovie"></app-header-fetch-movies>
     </div>
+    <app-loading *ngIf="isLoading"></app-loading>
     <app-movie-list *ngIf="movies" [movies]="movies.Search" (openModalDetails)="openModalDetails($event)">
     </app-movie-list>
 </div>

@@ -10,29 +10,12 @@ import { ActionMessages } from '../../shared/models/action-messages.enum'
   providedIn: 'root'
 })
 export class WatchlistService {
-
-
   private moviesWatchlist = new BehaviorSubject<FavMovie[]>([]);
   private actionMessage = new BehaviorSubject<string>(null);
 
-  constructor() {
-
-    const fakeData = [{
-      movieID: 123,
-      title: "test",
-      poster: "testowy poster"
-    },
-    {
-      movieID: 456,
-      title: "test2",
-      poster: "N/A"
-    }]
-    updateStorage(fakeData)
-    this.moviesWatchlist.next(favMovies)
-  }
+  constructor() {}
 
   getFavMovies(): BehaviorSubject<FavMovie[]> {
-    console.log("pobrano elementy watchlist: ", this.moviesWatchlist.value);
     return this.moviesWatchlist
   }
 
