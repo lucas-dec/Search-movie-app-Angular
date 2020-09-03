@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { favMovies, updateStorage } from '../storage/localStorage'
 import { FavMovie } from '../../shared/models/watchList'
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Subject, Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { FavMovieComponent } from '../watchlist/fav-movie/fav-movie.component';
 import { ActionMessages } from '../../shared/models/action-messages.enum'
@@ -11,7 +11,7 @@ import { ActionMessages } from '../../shared/models/action-messages.enum'
 })
 export class WatchlistService {
   private moviesWatchlist = new BehaviorSubject<FavMovie[]>([]);
-  private actionMessage = new BehaviorSubject<string>(null);
+  private actionMessage = new Subject<string>();
 
   constructor() {}
 
@@ -19,7 +19,7 @@ export class WatchlistService {
     return this.moviesWatchlist
   }
 
-  showActionMessage(): BehaviorSubject<string> {
+  showActionMessage(): Subject<string> {
     return this.actionMessage
   }
 

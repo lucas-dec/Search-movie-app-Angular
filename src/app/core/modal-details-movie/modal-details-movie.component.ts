@@ -19,7 +19,7 @@ export class ModalDetailsMovieComponent implements OnInit {
   errorMessage: string;
   isLoading: boolean = false;
   defaultPoster: string = "../../../assets/single-logo.png";
-  actionMessage: string
+  actionMessage: string = ""
   actionType: string
 
   constructor(private fetchMoviesService: FetchMoviesService, private modalDetailsMovieService: ModalDetailsMovieService, private watchlistService: WatchlistService) { }
