@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { ActionType } from '../../../shared/models/action-type.enum'
+import { ActionMessages } from '../../../shared/models/action-messages.enum'
 
 @Component({
   selector: 'app-notification',
@@ -8,9 +10,9 @@ import { Component, Input } from '@angular/core';
 export class NotificationComponent {
 
   @Input()
-  actionMessage
+  actionMessage : ActionMessages
 
   @Input()
-  actionType
+  actionType : ActionType
 
 }

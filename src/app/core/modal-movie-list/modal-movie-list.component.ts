@@ -12,7 +12,6 @@ import { Movies } from '../../shared/models/movies';
 
 export class ModalMovieListComponent implements OnInit {
   searchMovie: string
-
   movies: Movies;
   errorMessage: string;
   isLoading: boolean = false;
