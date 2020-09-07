@@ -1,27 +1,56 @@
-# SearchMovieApp
+## Search Movie app - Angular, API + OMDb API
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
+###### This is the same project like - [Search Movie app - ReactJS, Context API, OMDb API](https://github.com/lucas-dec/Search-movie-app) but created in Angular !
 
-## Development server
+###### The purpose of creating the application was to learn Angular and TypeScript.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Search Movie app give us ability to search for movies and show information details about the movie. User could add the movie to his own watch list.
+The application is using Context API for state managment. All the information about movies is fetching using the OMDb API - The Open Movie Database. Movies added by the user to the watch list are saved to local storage - that after refreshing the browser added movies are still on the list.
+This project was created as a part of self study and was build using ReactJS (Create React App), Context API, OMDb API, localStorge.
 
-## Code scaffolding
+## Live Preview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ 
+## Screenshots
 
-## Build
+![Main view](snapshot/main-view.jpg?raw=true "Main view")
+![List of fetch movies](snapshot/fetch-movies.jpg?raw=true "List of fetch movies")
+![All views](snapshot/all-view.jpg?raw=true "All views")
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Quick Start
 
-## Running unit tests
+- clone the repo:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+git clone https://github.com/lucas-dec/Search-movie-app-Angular.git
+```
 
-## Running end-to-end tests
+- install the necessary dependecies
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+npm install
+```
 
-## Further help
+- start the server:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+ng serve
+```
+
+- Open http://localhost:4200 to run the app in your browser on your local machine.
+
+## Features
+
+- Search movies
+- Details information about movies
+- Add movies to watch list
+- Remove movies from watch list
+- Notifications about errors and fetching data
+
+# Technologies used on this project:
+
+- Angular generated with Angular CLI
+- Servies
+- Local Storage to sasve user data
+- Routing
+- fetch API from 'OMDb API - The Open Movie Database' (http://www.omdbapi.com/)
