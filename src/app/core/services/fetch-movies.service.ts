@@ -20,12 +20,12 @@ export class FetchMoviesService {
   }
 
   getMovies(searchValue): Observable<Movies> {
-    const apiUrl: string = `http://www.omdbapi.com/?s=${searchValue}&apikey=${this.apiKey}`;
+    const apiUrl: string = `https://www.omdbapi.com/?s=${searchValue}&apikey=${this.apiKey}`;
     return this.http.get<Movies>(apiUrl).pipe(catchError(this.handleError))
   }
 
   getMovieDetails(id: string): Observable<Movie> {
-    const apiUrl: string = `http://www.omdbapi.com/?i=${id}&apikey=${this.apiKey}`;
+    const apiUrl: string = `https://www.omdbapi.com/?i=${id}&apikey=${this.apiKey}`;
     return this.http.get<Movie>(apiUrl).pipe(catchError(this.handleError))
   }
 }

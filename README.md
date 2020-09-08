@@ -9,7 +9,8 @@ The application is using Context API for state managment. All the information ab
 This project was created as a part of self study and was build using ReactJS (Create React App), Context API, OMDb API, localStorge.
 
 ## Live Preview
-
+###### The app is hosted on Netlify: 
+https://search-movie-app-angular.netlify.app/
  
 ## Screenshots
 

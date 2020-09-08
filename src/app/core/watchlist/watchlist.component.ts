@@ -17,8 +17,6 @@ export class WatchlistComponent implements OnInit, OnDestroy {
   constructor(private watchlistService: WatchlistService) { }
 
   ngOnInit(): void {
-    console.log('start watchlist');
-
     this.subscription = this.watchlistService.getFavMovies().subscribe(movies => {
       this.moviesOnWatchlist = movies
     })
